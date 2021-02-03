@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application programming Interfacing</title>
+</head>
+<body>
+    <h1>Hello wolrd!</h1>
+
+
+    <ul id="user-container">
+
+    </ul>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => user(json))
+
+        
+        function user(userName0) {
+            const result = userName0.map( x=> x.username);
+            let ul = document.getElementById('user-container');
+            for (let i = 0; i < result.length; i++) {
+                const userName = result[i];
+                const li = document.createElement('li');
+                li.innerText = userName;
+                ul.appendChild(li);
+
+                
+            }
+        } 
+        
+        
+        // const array = [
+        // {id: 101, name: 'maliha', 
+        // collegeName: {id: 501, name: 'Uttara engineering College'}
+        // },
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // {id: 101, name: 'maliha'},
+        // ];
+        // const arrayName = array;
+        // console.log(arrayName);
+        // const newArray = [];
+        // for (let i = 0; i < array.length; i++) {
+        //     const element = array[i].name;
+        //     newArray.push(element);
+        // }
+        // console.log('For Loop: ', newArray);
+
+        // const arrayResult = array.map( element=> element.name);
+        // console.log('map array: ', arrayResult);
+
+        
+        //This is my create json data 
+
+        // const students = {Name: 'Rafi bin Munir', Id:501, Phone: 0123456567,Address: 'Gulshan-2, Dhaka Bangladesh', city: 'Dhaka', Country: 'Bangladesh'}
+        // const jsonString = JSON.stringify(students);
+        // console.log(jsonString);
+
+        // const students0 = {Name: 'Rafi bin Munir', Id:501, Phone: 0123456567,Address: 'Gulshan-2, Dhaka Bangladesh', city: 'Dhaka', Country: 'Bangladesh'}
+        // const jsonPrase = JSON.stringify(students0);
+        // const parseFromJson = JSON.parse(jsonPrase);
+        // console.log(parseFromJson);
+        
+    </script>
+</body>
+</html>
